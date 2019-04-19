@@ -11,20 +11,6 @@
 #include <chrono>
 #include <dirent.h>
 
-struct Report
-{
-  long unsigned int num_actors;
-  long long num_invalid_actors;
-
-  void print() {
-    std::cout << "Found " << num_actors << " actors in "
-              << "TODO" << " files"
-              << std::endl;
-    std::cout << num_invalid_actors << " made invalid requests"
-              << std::endl;
-  }
-};
-
 struct LogEntry
 {
   std::string address;
@@ -51,13 +37,17 @@ struct Actor
   std::set<std::string> user_agents;
   std::unordered_map<int, long long> response_code_to_count;
 
-  void print() const {
-    std::cout << address << std::endl;
-    std::cout << requests.size() + invalid_requests.size() << " requests" << std::endl;
-    std::cout << invalid_requests.size() << " invalid requests" << std::endl;
-    std::cout << user_agents.size() << " unique user agents" << std::endl;
-    std::cout << response_code_to_count.size() << " unique HTTP methods" << std::endl;
-    std::cout << std::endl;
+  std::string to_csv() const {
+    return address + ","
+      + std::to_string(requests.size() + invalid_requests.size()) + ","
+      + std::to_string(invalid_requests.size()) + ","
+      + std::to_string(user_agents.size()) + ","
+      + std::to_string(response_code_to_count.size())
+      + "\n";
+  }
+
+  static std::string headers() {
+    return "Address,Requests,Invalid Requests,User Agents,Response Codes,\n";
   }
 };
 
@@ -170,13 +160,11 @@ void process_file(std::string file,
     auto user_agent = get_user_agent(parts);
 
     if (!is_valid_request(method, response_code)) {
-      error_callback(InvalidEntry{line});
+      error_callback(InvalidEntry{parts[0], line});
       continue;
     }
 
-    auto entry = LogEntry{parts[0], method, parts[6], user_agent, response_code};
-
-    success_callback(entry);
+    success_callback(LogEntry{parts[0], method, parts[6], user_agent, response_code});
   }
 }
 
@@ -189,7 +177,8 @@ void process_files(std::vector<std::string> files,
   }
 }
 
-LogEntryCallback add_request(Actors &actors) {
+LogEntryCallback add_request(Actors &actors)
+{
   return [&](auto entry) {
     auto actor = actors.find(entry.address);
     if (actor == actors.end()) {
@@ -206,7 +195,8 @@ LogEntryCallback add_request(Actors &actors) {
   };
 }
 
-InvalidEntryCallback add_invalid_request(Actors &actors) {
+InvalidEntryCallback add_invalid_request(Actors &actors)
+{
   return [&](auto entry) {
     auto actor = actors.find(entry.address);
     if (actor == actors.end()) {
@@ -214,24 +204,21 @@ InvalidEntryCallback add_invalid_request(Actors &actors) {
       new_actor.invalid_requests.emplace_back(entry);
       actors.emplace(std::make_pair(entry.address, new_actor));
     } else {
+      actor->second.address = entry.address;
       actor->second.invalid_requests.emplace_back(entry);
     }
   };
 }
 
-Report create_report(const Actors &actors)
+void write_report(const Actors& actors)
 {
-  auto num_invalid_actors = 0;
-
+  std::ofstream outfile;
+  outfile.open("report.csv");
+  outfile << Actor::headers();
   for (auto const& actor : actors) {
-    if (actor.second.invalid_requests.size() > 0) {
-      ++num_invalid_actors;
-    }
-
-    actor.second.print();
+    outfile << actor.second.to_csv();
   }
-
-  return Report{actors.size(), num_invalid_actors};
+  outfile.close();
 }
 
 int main(int argc, char **argv)
@@ -240,8 +227,7 @@ int main(int argc, char **argv)
   std::unordered_map<std::string, Actor> actors;
   auto t0 = std::chrono::high_resolution_clock::now();
   process_files(collect_files(path), add_request(actors), add_invalid_request(actors));
-  auto report = create_report(actors);
-  report.print();
+  write_report(actors);
   auto t1 = std::chrono::high_resolution_clock::now();
   std::cout << "Took " << std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count() << " millis" << std::endl;
 }
