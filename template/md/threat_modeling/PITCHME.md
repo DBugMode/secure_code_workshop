@@ -48,8 +48,6 @@ http://www.google.com/bot.html)"
 
 ## This is as much about business as it is security
 
-+++
-
 +++?image=template/img/spotlight.png&position=top right&size=20% auto
 @title[The Details]
 
