@@ -93,3 +93,12 @@ Open Source Dependency Tools
 @snapend
 
 +++
+
+## Exercise: Install and run this on your project
+
++++
+@title[Questions]
+
+@snap[center span-70]
+![QUESTIONS-4](template/img/questions-4.png)
+@snapend
