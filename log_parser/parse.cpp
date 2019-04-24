@@ -36,18 +36,20 @@ struct Actor
   std::vector<InvalidEntry> invalid_requests;
   std::set<std::string> user_agents;
   std::unordered_map<int, long long> response_code_to_count;
+  std::unordered_map<std::string, long long> http_method_to_count;
 
   std::string to_csv() const {
     return address + ","
       + std::to_string(requests.size() + invalid_requests.size()) + ","
       + std::to_string(invalid_requests.size()) + ","
       + std::to_string(user_agents.size()) + ","
-      + std::to_string(response_code_to_count.size())
+      + std::to_string(response_code_to_count.size()) + ","
+      + std::to_string(http_method_to_count.size())
       + "\n";
   }
 
   static std::string headers() {
-    return "Address,Requests,Invalid Requests,User Agents,Response Codes,\n";
+    return "Address,Requests,Invalid Requests,User Agents,Response Codes,Methods\n";
   }
 };
 
@@ -186,11 +188,27 @@ LogEntryCallback add_request(Actors &actors)
       new_actor.address = entry.address;
       new_actor.requests.emplace_back(entry);
       new_actor.user_agents.emplace(entry.user_agent);
+      new_actor.response_code_to_count.insert(std::make_pair(entry.response_code, 1));
+      new_actor.http_method_to_count.insert(std::make_pair(entry.method, 1));
       actors.emplace(std::make_pair(entry.address, new_actor));
     } else {
       actor->second.address = entry.address;
       actor->second.requests.emplace_back(entry);
       actor->second.user_agents.emplace(entry.user_agent);
+
+      auto rc = actor->second.response_code_to_count.find(entry.response_code);
+      if (rc != actor->second.response_code_to_count.end()) {
+	rc->second++;
+      } else {
+	actor->second.response_code_to_count.insert(std::make_pair(entry.response_code, 1));
+      }
+
+      auto mc = actor->second.http_method_to_count.find(entry.method);
+      if (mc != actor->second.http_method_to_count.end()) {
+	mc->second++;
+      } else {
+	actor->second.http_method_to_count.insert(std::make_pair(entry.method, 1));
+      }
     }
   };
 }
