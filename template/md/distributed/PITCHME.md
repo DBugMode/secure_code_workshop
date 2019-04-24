@@ -33,7 +33,7 @@
 What we have do
 @snapend
 
-@snap[south-west list-content-concise span-100]
+@snap[center list-content-concise span-100]
 @ol
 
 - Open the firewall for port 443
@@ -54,7 +54,7 @@ What we have do
 What we actually do
 @snapend
 
-@snap[south-west list-content-concise span-100]
+@snap[center list-content-concise span-100]
 @ol
 
 - Open the firewall ~~for port 443~~
@@ -179,8 +179,8 @@ The Message Queue Lifecycle
 @snap[center list-content-concise span-100]
 @ol
 
-- Send a message
-- If you see a response, parse it
+- Send messages (serialize)
+- Receive messages (deserialize)
 - Do the actual work
 
 @olend
@@ -230,6 +230,40 @@ The Message Queue Lifecycle
 +++
 
 ## MPS (Message per Service)
+
++++
+
+## Choosing a message format that supports schemas helps keep out invalid messages
+
++++
+
+## Serializing/Deserializing messages creates natural transformation points
+
++++
+
+## If you can't transform it into a supported schema, it was never a valid message
+
++++
+
+## But what if you can't do all this right now?
+
++++?image=template/img/spotlight.png&position=top right&size=20% auto
+@title[The Details]
+
+@snap[north-west]
+HTTP Service Considerations
+@snapend
+
+@snap[center list-content-concise span-100]
+@ol
+
+- Use JWT or oauth to authenticate requests
+- Use TLS to encrypt communications
+- Consider an API gateway
+
+@olend
+<br><br>
+@snapend
 
 +++
 @title[Questions]

@@ -69,4 +69,54 @@ Core Audit Requirements
 
 ## You get separation of pure audit vs general application logs
 
++++
+
+## Adding logging can be expensive
+
++++
+
+## Make sure to consider performance when adding audit trails
+
++++
+
+## Don't use performance as an excuse
+
++++
+
+## Just make sure to consider it
+
++++
+
+## Example
+
++++
+
+## If you work in a regulated industry, this is a must
+
++++
+
+## If you don't, it's still incredibly helpful
+
++++
+
+## Consider storing it in a db and providing it to users
+
++++
+
+## But remember that users don't always cause action to take place
+
++++
+
+## When the system drives activity, it's just as important to record
+
++++
+
+## Make sure you are able to resolve system activity to machine accounts
+
++++
+@title[Questions]
+
+@snap[center span-70]
+![QUESTIONS-4](template/img/questions-4.png)
+@snapend
 
