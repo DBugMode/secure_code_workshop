@@ -1,6 +1,6 @@
 ---?image=template/img/pencils.jpg
 
-## Managing Dependencies
+# Managing Dependencies
 
 +++
 

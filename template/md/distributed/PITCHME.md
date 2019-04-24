@@ -1,6 +1,6 @@
 ---?image=template/img/pencils.jpg
 
-## Securing Distributed Systems
+# Distributed Systems
 
 +++?image=template/img/pencils.jpg
 

@@ -50,6 +50,66 @@ Setup
 Docker is the only dependency for this workshop
 @snapend
 
+---?image=template/img/pencils.jpg
+
+# Introduction
+
++++
+
+## There's a lot we *could* talk about today
+
++++
+
+## But this is my "greatest hits" list
+
++++
+
+## You should learn the OWASP Top 10
+
++++
+
+## You should learn about preventing vulnerabilities in code
+
++++
+
+## But that's not as important, and it gets enough attention
+
++++
+
+## Flaws vs Vulnerabilities
+
++++
+
+## All vulnerabilities are bugs in software
+
++++
+
+## They have a reasonably fixed cost for remediation
+
++++
+
+## And they tend to be isolated
+
++++
+
+## Flaws are bugs in design
+
++++
+
+## They tend to carry a much higher cost for remediation
+
++++
+
+## And are typically more devastating in nature
+
++++
+
+## This course focuses mostly on flaws
+
++++
+
+## But feel free to ask questions about anything
+
 ---?include=template/md/threat_modeling/PITCHME.md
 
 ---?include=template/md/distributed/PITCHME.md
@@ -58,37 +118,10 @@ Docker is the only dependency for this workshop
 
 ---?include=template/md/dependencies/PITCHME.md
 
----?include=template/md/split-screen/PITCHME.md
+---
+@title[Questions]
 
----?include=template/md/sidebar/PITCHME.md
-
----?include=template/md/list-content/PITCHME.md
-
----?include=template/md/boxed-text/PITCHME.md
-
----?include=template/md/image/PITCHME.md
-
----?include=template/md/sidebox/PITCHME.md
-
----?include=template/md/code-presenting/PITCHME.md
-
----?include=template/md/header-footer/PITCHME.md
-
----?include=template/md/quotation/PITCHME.md
-
----?include=template/md/announcement/PITCHME.md
-
----?include=template/md/about/PITCHME.md
-
----?include=template/md/wrap-up/PITCHME.md
-
----?image=template/img/presenter.jpg
-@title[The Template Docs]
-
-@snap[west sign-off]
-### Now it's your turn.
+@snap[center span-70]
+![QUESTIONS-4](template/img/questions-4.png)
 @snapend
 
-@snap[south docslink text-gold span-100]
-For supporting documentation see the [The Template Docs](https://gitpitch.com/docs/the-template)
-@snapend

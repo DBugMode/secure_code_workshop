@@ -1,6 +1,6 @@
 ---?image=template/img/pencils.jpg
 
-## Designing for Observation
+# Designing for Observation
 
 +++?image=template/img/spotlight.png&position=top right&size=20% auto
 @title[The Details]
