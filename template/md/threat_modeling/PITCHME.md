@@ -34,7 +34,7 @@ until you hit one of these
 http://www.google.com/bot.html)"
 ```
 
-+++?image=template/img/boardroom.png&color=white
++++?image=template/img/boardroom.png&color=white&size=60% auto
 
 +++
 
@@ -55,7 +55,7 @@ http://www.google.com/bot.html)"
 Threat Modeling Details
 @snapend
 
-@snap[south-west list-content-concise span-100]
+@snap[center list-content-concise span-100]
 @ol
 
 - Threat modeling determines where and how
@@ -107,7 +107,7 @@ Threat Modeling Details
 First
 @snapend
 
-@snap[south-west list-content-concise span-100]
+@snap[center list-content-concise span-100]
 @ol
 
 - Open your system diagram(s)
@@ -121,15 +121,13 @@ First
 <br><br>
 @snapend
 
-+++
-
 +++?image=template/img/spotlight.png&position=top right&size=20% auto
 
 @snap[north-west]
 Second
 @snapend
 
-@snap[south-west list-content-concise span-100]
+@snap[center list-content-concise span-100]
 @ol
 
 - Identify assets with weak or missing controls
