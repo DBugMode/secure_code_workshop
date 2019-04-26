@@ -99,6 +99,6 @@ Open Source Dependency Tools
 +++
 @title[Questions]
 
-@snap[center span-70]
+@snap[center span-100]
 ![QUESTIONS-4](template/img/questions-4.png)
 @snapend

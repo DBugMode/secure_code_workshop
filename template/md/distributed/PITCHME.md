@@ -268,7 +268,10 @@ HTTP Service Considerations
 +++
 @title[Questions]
 
-@snap[center span-70]
+@snap[north span-100]
 ![QUESTIONS-4](template/img/questions-4.png)
 @snapend
 
+@snap[center span-100]
+youtube.com/watch?v=ZKswxdPcdsE
+@snapend

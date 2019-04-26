@@ -48,6 +48,10 @@ http://www.google.com/bot.html)"
 
 ## This is as much about business as it is security
 
++++
+
+## Without business support, you won't be able to accomplish much
+
 +++?image=template/img/spotlight.png&position=top right&size=20% auto
 @title[The Details]
 
@@ -284,3 +288,4 @@ threatmodelingbook.com
 amzn.to/2o2RDaE
 github.com/abedra/fair_notebook
 @snapend
+b
