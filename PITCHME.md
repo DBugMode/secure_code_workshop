@@ -9,6 +9,12 @@ Secure Code Masterclass
 GOTO Chicago 2019
 @snapend
 
+---
+
+@snap[center text-15 span-100]
+github.com/abedra/secure_code_workshop
+@snapend
+
 ---?image=template/img/bg/black.jpg&position=right&size=50% 100%
 @title[Agenda]
 
