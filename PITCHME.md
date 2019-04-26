@@ -72,7 +72,7 @@ Docker is the only dependency for this workshop
 
 +++
 
-## But that's not as important, and it gets enough attention
+## But that's not as important, and it gets *all the* attention
 
 +++
 
@@ -85,6 +85,10 @@ Docker is the only dependency for this workshop
 +++
 
 ## They have a reasonably fixed cost for remediation
+
++++
+
+## They can be curbed by better software hygiene
 
 +++
 
@@ -117,11 +121,4 @@ Docker is the only dependency for this workshop
 ---?include=template/md/observation/PITCHME.md
 
 ---?include=template/md/dependencies/PITCHME.md
-
----
-@title[Questions]
-
-@snap[center span-70]
-![QUESTIONS-4](template/img/questions-4.png)
-@snapend
 
