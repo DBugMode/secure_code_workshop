@@ -1,5 +1,0 @@
-_rel
-*.beam
-.erlang.mk
-log
-deps
