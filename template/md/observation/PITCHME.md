@@ -87,7 +87,7 @@ Core Audit Requirements
 
 +++
 
-## Example
+### github.com/paper-trail-gem/paper_trail
 
 +++
 
@@ -119,4 +119,3 @@ Core Audit Requirements
 @snap[center span-100]
 ![QUESTIONS-4](template/img/questions-4.png)
 @snapend
-

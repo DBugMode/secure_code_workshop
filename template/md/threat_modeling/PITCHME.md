@@ -46,6 +46,10 @@ http://www.google.com/bot.html)"
 
 +++
 
+## This is the most important security skill you can learn
+
++++
+
 ## This is as much about business as it is security
 
 +++
@@ -172,7 +176,7 @@ Second
 
 +++
 
-## Notebook Demo
+### github.com/abedra/fair_notebook
 
 +++
 
@@ -288,4 +292,4 @@ threatmodelingbook.com
 amzn.to/2o2RDaE
 github.com/abedra/fair_notebook
 @snapend
-b
+

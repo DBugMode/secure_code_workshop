@@ -40,7 +40,6 @@ What we have do
 - Setup SSL
 - Setup load balancing
 - Authenticate callers
-- Authorize callers
 - Do the actual work
 
 @olend
@@ -61,7 +60,6 @@ What we actually do
 - ~~Setup SSL~~
 - Setup load balancing
 - ~~Authenticate callers~~ tokens in a db
-- ~~Authorize callers~~
 - Do the actual work
 
 @olend
@@ -186,6 +184,10 @@ The Message Queue Lifecycle
 @olend
 <br><br>
 @snapend
+
++++
+
+## Example
 
 +++
 
